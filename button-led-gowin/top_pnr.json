@@ -1,0 +1,227 @@
+{
+  "creator": "Next Generation Place and Route (Version nextpnr-0.10-45-g98c18d7f)",
+  "modules": {
+    "top": {
+      "settings": {
+        "route": "00000000000000000000000000000001",
+        "router/tmg_ripup": "0 ",
+        "router1/useEstimate": "1 ",
+        "router1/fullCleanupReroute": "1 ",
+        "router1/cleanupReroute": "1 ",
+        "router1/maxIterCnt": "200",
+        "place": "00000000000000000000000000000001",
+        "placer1/startTemp": "1.000000",
+        "placer1/minBelsForGridPick": "64",
+        "placer1/netShareWeight": "0.000000",
+        "placer1/constraintWeight": "10.000000",
+        "placerHeap/cellPlacementTimeout": "8",
+        "placerHeap/noCtrlSet": "0 ",
+        "placerHeap/netShareWeight": "0.000000",
+        "placerHeap/parallelRefine": "0 ",
+        "pack": "00000000000000000000000000000001",
+        "synth": "00000000000000000000000000000001",
+        "placerHeap/timingWeight": "10 ",
+        "placerHeap/criticalityExponent": "2",
+        "placerHeap/beta": "0.900000",
+        "placerHeap/alpha": "0.100000",
+        "seed": "0011000101000001010110010010011001010011010110001001011110010011",
+        "arch.type": " ",
+        "arch.name": "ARCHNAME",
+        "router": "default",
+        "placer": "heap",
+        "auto_freq": "00000000000000000000000000000000",
+        "timing_driven": "00000000000000000000000000000001",
+        "target_freq": "12000000.000000",
+        "cst.filename": "gw2ar-reflist.cst",
+        "packer.partno": "GW2AR-LV18QN88C8/I7",
+        "packer.chipdb": "GW2A-18C",
+        "packer.arch": "himbaechel/gowin"
+      },
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "top.v:1.1-10.10"
+      },
+      "ports": {
+        "mode0_key1": {
+          "direction": "input",
+          "bits": [ 9494 ]
+        },
+        "led0": {
+          "direction": "output",
+          "bits": [ 9493 ]
+        }
+      },
+      "cells": {
+        "GSR": {
+          "hide_name": 0,
+          "type": "GSR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000010",
+            "NEXTPNR_BEL": "X50Y27/GSR"
+          },
+          "port_directions": {
+            "GSRI": "input"
+          },
+          "connections": {
+            "GSRI": [ 9577 ]
+          }
+        },
+        "$PACKER_GND_DRV": {
+          "hide_name": 1,
+          "type": "GOWIN_GND",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000010",
+            "NEXTPNR_BEL": "X0Y0/GND"
+          },
+          "port_directions": {
+            "G": "output"
+          },
+          "connections": {
+            "G": [ 9578 ]
+          }
+        },
+        "$PACKER_VCC_DRV": {
+          "hide_name": 1,
+          "type": "GOWIN_VCC",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000010",
+            "NEXTPNR_BEL": "X0Y0/VCC"
+          },
+          "port_directions": {
+            "V": "output"
+          },
+          "connections": {
+            "V": [ 9577 ]
+          }
+        },
+        "mode0_key1_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X55Y29/IOBA",
+            "src": "top.v:2.12-2.22",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=UP": "00000000000000000000000000000001",
+            "&BANK_VCCIO=3.3": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9500 ],
+            "I": [ 9494 ]
+          }
+        },
+        "led0_OBUF_O_I_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X26Y46/LUT4",
+            "src": "/usr/bin/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9500 ],
+            "F": [ 9497 ]
+          }
+        },
+        "led0_OBUF_O": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y46/IOBA",
+            "src": "top.v:3.12-3.16",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=NONE": "00000000000000000000000000000001",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&BANK_VCCIO=3.3": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9493 ],
+            "I": [ 9497 ]
+          }
+        }
+      },
+      "netnames": {
+        "$PACKER_GND": {
+          "hide_name": 1,
+          "bits": [ 9578 ] ,
+          "attributes": {
+            "ROUTING": " "
+          }
+        },
+        "$PACKER_VCC": {
+          "hide_name": 1,
+          "bits": [ 9577 ] ,
+          "attributes": {
+            "ROUTING": "X50Y27/C4;X50Y27/C4/W241;1;X51Y27/W240;X51Y27/W240/VCC;1;X51Y27/VCC;;1"
+          }
+        },
+        "mode0_key1": {
+          "hide_name": 0,
+          "bits": [ 9494 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "top.v:2.12-2.22"
+          }
+        },
+        "mode0_key1_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 9500 ] ,
+          "attributes": {
+            "ROUTING": "X55Y29/F6;;1;X55Y29/S830;X55Y29/S830/F6;1;X55Y37/W830;X55Y37/W830/S838;1;X47Y37/W800;X47Y37/W800/W838;1;X39Y37/W810;X39Y37/W810/W808;1;X31Y37/W820;X31Y37/W820/W818;1;X27Y37/S820;X27Y37/S820/W824;1;X27Y45/S270;X27Y45/S270/S828;1;X27Y46/W270;X27Y46/W270/S271;1;X26Y46/A4;X26Y46/A4/W271;1",
+            "src": "/usr/bin/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "single_bit_vector": "00000000000000000000000000000001",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "led0": {
+          "hide_name": 0,
+          "bits": [ 9493 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "top.v:3.12-3.16"
+          }
+        },
+        "led0_OBUF_O_I": {
+          "hide_name": 0,
+          "bits": [ 9497 ] ,
+          "attributes": {
+            "ROUTING": "X26Y46/F4;;1;X26Y46/W820;X26Y46/W820/F4;1;X18Y46/W830;X18Y46/W830/W828;1;X10Y46/W830;X10Y46/W830/W838;1;X2Y46/W250;X2Y46/W250/W838;1;X0Y46/A0;X0Y46/A0/W252;1"
+          }
+        }
+      }
+    }
+  }
+}
